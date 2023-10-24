@@ -35,4 +35,4 @@ inquirer
         err ? console.log(err) : console.log("Logo.svg has been generated")
         );
     });
-    .catch((err) => console.error(err));
+    .catch((err) => console.error(err))
