@@ -7,7 +7,7 @@ const createLogo = ("./examples/logo.svg");
 
 function generateLogo(response) {
     const shape = createShape(response);
-    fs.writeFile(createLogo, shape () => console.log('logo.svg has been generated'));
+    fs.writeFile(createLogo, shape, () => console.log('logo.svg has been generated'));
 }
 
 function run() {
