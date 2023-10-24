@@ -1,9 +1,36 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const {createShape} = require('./lib/createShape');
-const {createSVG} = require('./lib/createSVG');
+const prompts = require('./lib/prompts.js');
+const createShape = require('./lib/createShape.js');
+const createLogo = ("./examples/logo.svg");
 
-inquirer
+
+function generateLogo(response) {
+    const shape = createShape(response);
+    fs.writeFile(createLogo, shape () => console.log('logo.svg has been generated'));
+}
+
+function run() {
+    inquirer
+    .prompt(prompts)
+    .then((response) => {
+        generateLogo(response);
+    })
+    .catch(err => {
+        console.log(err)
+    });
+}
+
+run()
+
+
+
+
+
+
+
+
+/*inquirer
     .prompt([
         {
             type: "input",
@@ -35,4 +62,4 @@ inquirer
         err ? console.log(err) : console.log("Logo.svg has been generated")
         );
     });
-    .catch((err) => console.error(err))
+    .catch((err) => console.error(err)); */
