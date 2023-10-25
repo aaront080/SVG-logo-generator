@@ -1,16 +1,16 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
+const fs = require('fs')
 const prompts = require('./lib/prompts.js');
 const createShape = require('./lib/createShape.js');
 const createLogo = ("./examples/logo.svg");
 
 
 function generateLogo(response) {
-    const shape = createShape(response);
-    fs.writeFile(createLogo, shape, () => console.log('logo.svg has been generated'));
+    const finalLogo = createShape(response);
+    fs.writeFile(createLogo, finalLogo, () => console.log('logo.svg has been generated'));
 }
 
-function run() {
+function init() {
     inquirer
     .prompt(prompts)
     .then((response) => {
@@ -21,7 +21,7 @@ function run() {
     });
 }
 
-run()
+init()
 
 
 
