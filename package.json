@@ -15,7 +15,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest app.test.js"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
